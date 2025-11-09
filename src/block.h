@@ -1,0 +1,25 @@
+#pragma once
+#include <vector>
+#include <map>
+#include "position.h"
+#include "colors.h"
+class Block
+{
+    public:
+        Block();
+        int id;
+        void Draw();
+        void Move(int rows, int cols);
+        std::vector<Position> GetCellPostitions();
+        void Rotate();
+        void UndoRotate();
+        std::map<int, std::vector<Position>> cells;
+
+    private:
+        int cellSize;
+        int rotationState;
+        std::vector<Color> colors;
+        int rowOffset;
+        int colOffset;
+
+};
