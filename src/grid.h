@@ -12,7 +12,11 @@ class Grid
         void Draw();
         bool IsCellOutSide(int row,int col);
         bool IsCellEmpty(int row, int col);
+        int ClearFullRows();
     private:
+        bool IsRowFull(int row);
+        void ClearRow(int row);
+        void MoveDownRow(int row, int numRows);
         int numRows;
         int numCols;
         int cellSize;
